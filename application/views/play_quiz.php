@@ -52,101 +52,101 @@
         }
 
     </style>
-        <style>
-            body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            }
+    <style>
+        body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        }
 
-            .navbar {
-            background-color: #333;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            }
+        .navbar {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        }
 
-            .navbar a {
-            text-decoration: none;
-            color: #fff;
-            }
+        .navbar a {
+        text-decoration: none;
+        color: #fff;
+        }
 
-            .logo a {
-            font-size: 1.5rem;
-            font-weight: bold;
-            }
+        .logo a {
+        font-size: 1.5rem;
+        font-weight: bold;
+        }
 
-            .nav-links {
+        .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        }
+
+        .nav-links li {
+        margin-left: 20px;
+        }
+
+        .nav-links li:first-child {
+        margin-left: 0;
+        }
+
+        .welcome-message {
+        text-align: center;
+        padding: 50px 20px;
+        }
+
+        .welcome-message h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        }
+
+        .welcome-message p {
+        font-size: 1.2rem;
+        }
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        ul {
             list-style: none;
-            margin: 0;
             padding: 0;
-            display: flex;
-            }
-
-            .nav-links li {
-            margin-left: 20px;
-            }
-
-            .nav-links li:first-child {
-            margin-left: 0;
-            }
-
-            .welcome-message {
-            text-align: center;
-            padding: 50px 20px;
-            }
-
-            .welcome-message h1 {
-            font-size: 2rem;
+        }
+        li {
             margin-bottom: 10px;
-            }
-
-            .welcome-message p {
-            font-size: 1.2rem;
-            }
-            body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            }
-            .quiz-container {
-                max-width: 600px;
-                margin: 50px auto;
-                padding: 20px;
-                background-color: #f4f4f4;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-            h2 {
-                margin-top: 0;
-                color: #333;
-            }
-            ul {
-                list-style: none;
-                padding: 0;
-            }
-            li {
-                margin-bottom: 10px;
-            }
-            label {
-                margin-left: 5px;
-            }
-            button {
-                padding: 10px 20px;
-                background-color: #007bff;
-                color: #fff;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            button:hover {
-                background-color: #0056b3;
-            }
-            .new-question-input {
-                margin-bottom: 10px;
-            }
-        </style>
+        }
+        label {
+            margin-left: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .new-question-input {
+            margin-bottom: 10px;
+        }
+    </style>
 
 </head>
 <body>
