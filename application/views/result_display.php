@@ -3,82 +3,82 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Play Quiz</title>
+    <title>Play Quiz</title>
 
-  <style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-    }
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+        }
 
-    #container {
-        width: 80%;
-        margin: 20px auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        #container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    h1 {
-        text-align: center;
-        color: #333;
-    }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
 
-    form {
-        margin-top: 20px;
-    }
+        form {
+            margin-top: 20px;
+        }
 
-    p {
-        margin: 10px 0;
-    }
+        p {
+            margin: 10px 0;
+        }
 
-    span {
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
+        span {
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
 
-    span.bg-correct {
-        background-color: #ADFFB4;
-    }
+        span.bg-correct {
+            background-color: #ADFFB4;
+        }
 
-    span.bg-incorrect {
-        background-color: #FF9C9E;
-    }
+        span.bg-incorrect {
+            background-color: #FF9C9E;
+        }
 
-    h2 {
-        text-align: center;
-        margin-top: 40px;
-        color: #333;
-    }
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+            color: #333;
+        }
 
-    h1.score {
-        text-align: center;
-        color: #333;
-        font-size: 36px;
-        margin-top: 10px;
-    }
+        h1.score {
+            text-align: center;
+            color: #333;
+            font-size: 36px;
+            margin-top: 10px;
+        }
 
-    input[type="submit"] {
-        display: block;
-        margin: 0 auto;
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s;
-    }
+        input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
 
-    input[type="submit"]:hover {
-        background-color: #45a049;
-    }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
 
-  </style>
+    </style>
 
 </head>
 <body>
