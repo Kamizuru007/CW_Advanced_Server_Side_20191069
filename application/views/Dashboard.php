@@ -190,7 +190,7 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-        <a href="#">QUIZ BOX</a>
+        <a href="<?php echo base_url('index.php/AdminController/index1'); ?>">QUIZ BOX</a>
 
         </div>
         <ul class="nav-links">
@@ -200,8 +200,6 @@
     </nav>
     <div id="container">
 	<h1>Welcome to Quiz!</h1>
-
-
     <form method="" action="<?php echo base_url();?>index.php/Questions/quizdisplay">
 
         <input type="submit" value="Start">

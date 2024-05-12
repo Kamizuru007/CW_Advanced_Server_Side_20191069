@@ -11,7 +11,18 @@ class Questions extends CI_Controller {
 	{
 		$this->load->model('quizmodel');
 		$this->data['questions'] = $this->quizmodel->getQuestions();
+		$this->load->view('selecttype', $this->data);
+	}
+
+	public function quizdisplay2()
+	{
+		$this->load->model('quizmodel');
+		$this->data['questions'] = $this->quizmodel->getQuestions();
 		$this->load->view('play_quiz', $this->data);
+	}
+	public function welcomequizdisplay()
+	{
+		$this->load->view('quiz_game');
 	}
 	
 	public function resultdisplay()

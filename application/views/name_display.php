@@ -194,7 +194,7 @@
 <body>
 	<nav class="navbar">
 		<div class="logo">
-		<a href="#">QUIZ BOX</a>
+		<a href="<?php echo base_url('index.php/AdminController/index1'); ?>">QUIZ BOX</a>
 
 		</div>
 		<ul class="nav-links">

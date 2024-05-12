@@ -65,4 +65,5 @@ class People extends CI_Controller {
 			 echo json_encode($edit);
 		}
 	}
+
 }

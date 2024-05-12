@@ -6,33 +6,36 @@
 
     <style>
         body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
         }
 
-        #container {
-            width: 80%;
-            margin: 0 auto;
+        form {
+            width: 50%;
+            margin: 100px auto;
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
-            text-align: center;
-        }
-
-        form {
-            margin-top: 20px;
-        }
-
         p {
+            margin: 0 0 10px;
+        }
+
+        label {
             font-weight: bold;
         }
 
-        input[type="radio"] {
-            margin-bottom: 10px;
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
         }
 
         input[type="submit"] {
@@ -50,7 +53,6 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
-
     </style>
     <style>
         body {
@@ -151,8 +153,8 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">
-        <a href="<?php echo base_url('index.php/AdminController/index1'); ?>">QUIZ BOX</a>
+            <div class="logo">
+            <a href="<?php echo base_url('index.php/AdminController/index1'); ?>">QUIZ BOX</a>
 
         </div>
         <ul class="nav-links">
@@ -160,39 +162,16 @@
         <li><a href="<?php echo base_url('index.php/LoginController/LogoutUser'); ?>">Logout</a></li>
         </ul>
     </nav>
-    <div id="container" style="display: block;">
-        <h1>Play the Quiz!</h1>
-        
-        <form method="post" action="<?php echo base_url();?>index.php/Questions/resultdisplay">
-        
-        
-            <?php foreach($questions as $row) { ?>
-            
-            <?php $ans_array = array($row->option1, $row->option2, $row->option3, $row->option4); 
-            shuffle($ans_array); 
-            $type_array = array($row->qtype); 
-            ?>
-            <?php
-            $num = $_POST['num'];
-            ?>
-        
-            <?php if ($type_array[0] == $num) { ?>
-            <p><?=$row->quizID?>.<?=$row->question?></p>
-            <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[0]?>" required> <?=$ans_array[0]?><br>
-            <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[1]?>"> <?=$ans_array[1]?><br>
-            <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[2]?>"> <?=$ans_array[2]?><br>
-            <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[3]?>"> <?=$ans_array[3]?><br>
-            <?php } ?>
-            
-            <?php } ?>
-            
-
-            <br><br>
-            <input type="submit" value="Submit!">
-        
-        </form>  
-    </div>
-
+    <form  method="post" action="<?php echo base_url();?>index.php/Questions/quizdisplay2">
+        <p>Enter 1 for Technology</p>
+        <p>Enter 2 for History</p>
+        <p>Enter 3 for Science</p>
+        <p>Enter 4 for Mathematics</p>
+        <label for="num">Number:</label>
+        <input type="text" id="num" name="num"><br><br>
+        <input type="submit" value="Submit" onclick="showContainer()"">
+       
+    </form>
 </body>
 </html>
 

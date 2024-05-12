@@ -4,7 +4,7 @@ class quizmodel extends CI_Model {
 
 	public function getQuestions()
 	{
-		$this->db->select("quizID, question, option1, option2, option3,option4, answer");
+		$this->db->select("quizID, question, option1, option2, option3,option4, answer,qtype");
 		$this->db->from("quiz");
 		
 		$query = $this->db->get();
