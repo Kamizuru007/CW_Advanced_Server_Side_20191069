@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Play Quiz</title>
+	<title>Create Comment</title>
 
     <style>
         body {
@@ -148,22 +148,6 @@
         }
     </style>
 
-    <style>
-        .commentcreate li a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50; /* Green background color */
-            color: white; /* White text color */
-            text-decoration: none; /* Remove underline */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s ease; /* Smooth transition */
-        }
-
-        .commentcreate li a:hover {
-            background-color: #45a049; /* Darker green on hover */
-        }
-    </style>
-
 </head>
 <body>
     <nav class="navbar">
@@ -177,47 +161,13 @@
         </ul>
     </nav>
     
-    <div id="container" style="display: block;">
-        <h1>Play the Quiz!</h1>
-        
-        <form method="post" action="<?php echo base_url();?>index.php/Questions/resultdisplay">
-        
-        
-            <?php foreach($questions as $row) { ?>
-            
-            <?php $ans_array = array($row->option1, $row->option2, $row->option3, $row->option4); 
-            shuffle($ans_array); 
-            $type_array = array($row->qtype); 
-            ?>
-            <?php
-            $num = $_POST['num'];
-            ?>
-        
-            <?php if ($type_array[0] == $num) { ?>
-            <p><?=$row->quizID?>.<?=$row->question?></p>
-            <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[0]?>" required> <?=$ans_array[0]?><br>
-            <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[1]?>"> <?=$ans_array[1]?><br>
-            <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[2]?>"> <?=$ans_array[2]?><br>
-            <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[3]?>"> <?=$ans_array[3]?><br>
-            <?php } ?>
-            
-            <?php } ?>
-            
-
-            <br><br>
-            <input type="submit" value="Submit!">
-        
-        </form>  
-    </div>
-
-
 
     <div class="container">
 		<h1>User Comments</h1>
 		<h3>Already Here</h3>
         <div id="data">
             <table>
-                <?php foreach ($comments as $row) { ?>
+                <?php foreach ($commentspg as $row) { ?>
                 <tr>
                     <td><?=$row->commentID?> -- </td>
                     <td><?=$row->commentText?></td>
@@ -235,14 +185,45 @@
 	<br>
 
 	<h3>Create a Comment</h3>
-   
-   <br>
 
-    <ul class="commentcreate">
-        <li><a href="<?php echo base_url('index.php/Questions/createcommentdislay'); ?>">Create Or Delete Comment</a></li>
-    </ul>
-
+   <form>
    
+	
+        <label for='commentText'> Comment Here :  </label>
+		<input type='text' name='commentText' id='commentText' size='30' /> <br>
+
+		<input type="submit" value="Create" id="create" />
+   
+   </form>
+   
+   <br><br>
+
+
+   <script>
+	
+		$(document).ready(function() {
+			
+			$("#create").click(function(event) {
+				event.preventDefault();
+				var commentText = $("input#commentText").val();  
+				
+			$.ajax({
+				method: "POST",
+				url: "<?php echo base_url(); ?>index.php/Questions/comment",	
+				dataType: 'JSON',
+				data: {commentText: commentText},
+				
+				success: function(data) {
+					console.log(commentText);
+					$("#data").load(location.href + " #data");
+					$("input#commentText").val(""); 
+					
+				}
+			});
+			});
+		});
+		
+  	</script>
   	
 
 </body>
