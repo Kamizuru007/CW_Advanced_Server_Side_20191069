@@ -25,8 +25,9 @@ class People extends CI_Controller {
 			$option3 = $this->input->post('option3');
 			$option4 = $this->input->post('option4');
 			$answer = $this->input->post('answer');
+			$qtype = $this->input->post('qtype');
 			
-			$data = $this->peoplemodel->insertperson($question, $option1, $option2, $option3, $option4, $answer);
+			$data = $this->peoplemodel->insertperson($question, $option1, $option2, $option3, $option4, $answer,$qtype);
 			echo json_encode($data);
 		}
 		
@@ -51,8 +52,9 @@ class People extends CI_Controller {
 			$option3 = $this->input->post('option3');
 			$option4 = $this->input->post('option4');
 			$answer = $this->input->post('answer');
+			$qtype = $this->input->post('qtype');
 			
-			$update = $this->peoplemodel->updatePerson($quizID, $question, $option1,$option2,$option3,$option4, $answer);
+			$update = $this->peoplemodel->updatePerson($quizID, $question, $option1,$option2,$option3,$option4, $answer,$qtype);
 			echo json_encode($update);
 			
 	

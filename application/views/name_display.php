@@ -250,6 +250,9 @@
 
 		<label for='answer'> Answer </label>
 		<input type='text' name='answer' id='answer' size='30' /> <br>
+
+		<label for='qtype'> Category </label>
+		<input type='text' name='qtype' id='qtype' size='30' /> <br>
 		
 		<input type="submit" value="Create" id="create" />
    
@@ -260,7 +263,7 @@
 
    <form>
      	<label for="edit"> Type in the id to delete/edit</label>
-       <input type="text" name="quizID" id="quizID" size="10" /> <br>
+       	<input type="text" name="quizID" id="quizID" size="10" /> <br>
        
 		<input type="submit" value="Delete" id="delete" />
 		<input type="submit" value="Edit" id="edit" />
@@ -290,6 +293,9 @@
 			
 			<label for="editquestion">Edit Answer</label>
 			<input type="text" name="editanswer" id="editanswer" size="30" /> <br>
+
+			<label for="editquestion">Edit Category</label>
+			<input type="text" name="editqtype" id="editqtype" size="30" /> <br>
 			
 			<input type="submit" value="Update" id="update">
 
@@ -312,14 +318,15 @@
 				var option3 = $("input#option3").val(); 
 				var option4 = $("input#option4").val(); 
 				var answer = $("input#answer").val(); 
+				var qtype = $("input#qtype").val(); 
 			$.ajax({
 				method: "POST",
 				url: "<?php echo base_url(); ?>index.php/People/person",	
 				dataType: 'JSON',
-				data: {question: question, option1: option1, option2: option2,option3: option3,option4: option4,answer: answer},
+				data: {question: question, option1: option1, option2: option2,option3: option3,option4: option4,answer: answer,qtype: qtype},
 				
 				success: function(data) {
-					console.log(question, option1,option2,option3,option4, answer);
+					console.log(question, option1,option2,option3,option4, answer,qtype);
 					$("#data").load(location.href + " #data");
 					$("input#question").val(""); 
 					$("input#option1").val(""); 
@@ -327,6 +334,7 @@
 					$("input#option3").val(""); 
 					$("input#option4").val(""); 
 					$("input#answer").val("");  
+					$("input#qtype").val("");
 				}
 			});
 			});
@@ -367,9 +375,9 @@
 				
 				success: function(data) {
 					
-					$.each(data,function(quizID , question, option1,option2,option3,option4, answer) {
+					$.each(data,function(quizID , question, option1,option2,option3,option4, answer,qtype) {
 					
-					console.log(quizID , question, option1,option2,option3,option4, answer);
+					console.log(quizID , question, option1,option2,option3,option4, answer,qtype);
 					$("input#quizID ").val(quizID ); 
 					$("#editBox").show();
 					$("input#editquestion").val(question[0]);
@@ -378,6 +386,7 @@
 					$("input#editoption3").val(question[3]);
 					$("input#editoption4").val(question[4]);
 					$("input#editanswer").val(question[5]);
+					$("input#editqtype").val(question[6]);
 					});
 				}
 			});
@@ -397,14 +406,15 @@
 				var option3 = $("input#editoption3").val(); 
 				var option4 = $("input#editoption4").val(); 
 				var answer = $("input#editanswer").val(); 
+				var qtype = $("input#editqtype").val();
 			$.ajax({
 				method: "POST",
 				url: "<?php echo base_url(); ?>index.php/People/user",	
 				dataType: 'JSON',
-				data: {quizID : quizID , question: question, option1: option1, option2: option2,option3: option3,option4: option4,answer: answer},
+				data: {quizID : quizID , question: question, option1: option1, option2: option2,option3: option3,option4: option4,answer: answer,qtype: qtype},
 				
 				success: function(data) {
-					console.log(quizID , question, option1, option2, option3,option4,answer);
+					console.log(quizID , question, option1, option2, option3,option4,answer,qtype);
 					$("#data").load(location.href + " #data");
 					$("#message").html("You have successfully updated " + question + " Thank you");
 					$("#message").show().fadeOut(5000);

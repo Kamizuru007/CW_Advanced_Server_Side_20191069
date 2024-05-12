@@ -19,7 +19,7 @@ class peoplemodel extends CI_Model {
 			exit(); }
 	}
 	
-	public function insertPerson($question, $option1, $option2, $option3, $option4, $answer) {
+	public function insertPerson($question, $option1, $option2, $option3, $option4, $answer,$qtype) {
 		
 		$this->db->set('question', $question);
 		$this->db->set('option1', $option1);
@@ -27,6 +27,7 @@ class peoplemodel extends CI_Model {
 		$this->db->set('option3', $option3);
 		$this->db->set('option4', $option4);
 		$this->db->set('answer', $answer);
+		$this->db->set('qtype', $qtype);
 		$this->db->insert('quiz');
 	}
 	
@@ -46,7 +47,7 @@ class peoplemodel extends CI_Model {
 		
 		foreach ($result as $row) {
 			
-			$users[$row->quizID] = array($row->question, $row->option1 ,$row->option2 ,$row->option3 ,$row->option4 , $row->answer);	
+			$users[$row->quizID] = array($row->question, $row->option1 ,$row->option2 ,$row->option3 ,$row->option4 , $row->answer,$row->qtype);	
 		}
 		return $users;	 
 		 }
@@ -54,7 +55,7 @@ class peoplemodel extends CI_Model {
 	}
 	
 	
-	public function updatePerson($quizID, $question, $option1,$option2,$option3,$option4, $answer) {
+	public function updatePerson($quizID, $question, $option1,$option2,$option3,$option4, $answer,$qtype) {
 	
 		$this->db->where('quizID', $quizID);
 		$this->db->set('question', $question);
@@ -63,6 +64,7 @@ class peoplemodel extends CI_Model {
 		$this->db->set('option3', $option3);
 		$this->db->set('option4', $option4);
 		$this->db->set('answer', $answer);
+		$this->db->set('qtype', $qtype);
 		$this->db->update('quiz');
 	}
 	
