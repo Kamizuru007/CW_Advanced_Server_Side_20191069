@@ -214,12 +214,10 @@
 
     <div class="container">
 		<h1>User Comments</h1>
-		<h3>Already Here</h3>
         <div id="data">
             <table>
                 <?php foreach ($comments as $row) { ?>
                 <tr>
-                    <td><?=$row->commentID?> -- </td>
                     <td><?=$row->commentText?></td>
                 </tr>
                 
