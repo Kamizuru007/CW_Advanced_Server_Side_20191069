@@ -1,8 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class peoplemodel extends CI_Model {
+class quizzmodel extends CI_Model {
 
-	public function getPeoples()
+	public function getquizzs()
 	{
 		$this->db->select("*");
 		$this->db->from('quiz');

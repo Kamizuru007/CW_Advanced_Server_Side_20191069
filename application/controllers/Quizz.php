@@ -1,17 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class People extends CI_Controller {
+class Quizz extends CI_Controller {
 	
 	function __construct() {
 		parent::__construct();
 		$this->load->database();
-		$this->load->model('peoplemodel');
+		$this->load->model('quizzmodel');
 	}
 
 	public function index()
 	{
-		$this->load->model('peoplemodel');
-		$this->data['names'] = $this->peoplemodel->getPeoples();
+		$this->load->model('quizzmodel');
+		$this->data['names'] = $this->quizzmodel->getquizzs();
 		$this->load->view('name_display', $this->data);
 	}
 	
@@ -27,7 +27,7 @@ class People extends CI_Controller {
 			$answer = $this->input->post('answer');
 			$qtype = $this->input->post('qtype');
 			
-			$data = $this->peoplemodel->insertperson($question, $option1, $option2, $option3, $option4, $answer,$qtype);
+			$data = $this->quizzmodel->insertperson($question, $option1, $option2, $option3, $option4, $answer,$qtype);
 			echo json_encode($data);
 		}
 		
@@ -35,7 +35,7 @@ class People extends CI_Controller {
 		     
 			 $quizID = $this->input->get('quizID');
 			 
-			 $deleted = $this->peoplemodel->deleteperson($quizID);
+			 $deleted = $this->quizzmodel->deleteperson($quizID);
 			 echo json_encode($deleted);
 		
 		}
@@ -54,7 +54,7 @@ class People extends CI_Controller {
 			$answer = $this->input->post('answer');
 			$qtype = $this->input->post('qtype');
 			
-			$update = $this->peoplemodel->updatePerson($quizID, $question, $option1,$option2,$option3,$option4, $answer,$qtype);
+			$update = $this->quizzmodel->updatePerson($quizID, $question, $option1,$option2,$option3,$option4, $answer,$qtype);
 			echo json_encode($update);
 			
 	
@@ -63,7 +63,7 @@ class People extends CI_Controller {
 		elseif ($this->input->server('REQUEST_METHOD') == 'GET') {
 		     
 			 $quizID = $this->input->get('quizID');	 
-			 $edit = $this->peoplemodel->getPerson($quizID);
+			 $edit = $this->quizzmodel->getPerson($quizID);
 			 echo json_encode($edit);
 		}
 	}

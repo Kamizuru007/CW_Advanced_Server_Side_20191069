@@ -321,7 +321,7 @@
 				var qtype = $("input#qtype").val(); 
 			$.ajax({
 				method: "POST",
-				url: "<?php echo base_url(); ?>index.php/People/person",	
+				url: "<?php echo base_url(); ?>index.php/Quizz/person",	
 				dataType: 'JSON',
 				data: {question: question, option1: option1, option2: option2,option3: option3,option4: option4,answer: answer,qtype: qtype},
 				
@@ -347,7 +347,7 @@
 				var quizID  = $("input#quizID ").val();  
 			$.ajax({
 				method: "GET",
-				url: "<?php echo base_url(); ?>index.php/People/person",	
+				url: "<?php echo base_url(); ?>index.php/Quizz/person",	
 				dataType: 'JSON',
 				data: {quizID : quizID },
 				success: function(data) {
@@ -369,7 +369,7 @@
 				var quizID  = $("input#quizID ").val();  
 			$.ajax({
 				method: "GET",
-				url: "<?php echo base_url(); ?>index.php/People/user",	
+				url: "<?php echo base_url(); ?>index.php/Quizz/user",	
 				dataType: 'JSON',
 				data: {quizID : quizID },
 				
@@ -409,7 +409,7 @@
 				var qtype = $("input#editqtype").val();
 			$.ajax({
 				method: "POST",
-				url: "<?php echo base_url(); ?>index.php/People/user",	
+				url: "<?php echo base_url(); ?>index.php/Quizz/user",	
 				dataType: 'JSON',
 				data: {quizID : quizID , question: question, option1: option1, option2: option2,option3: option3,option4: option4,answer: answer,qtype: qtype},
 				
@@ -430,7 +430,7 @@
 				
 				var Create = Backbone.Model.extend({
 					url: function () {
-						var link = "<?php echo base_url(); ?>index.php/People/person?question=" + this.get("question");
+						var link = "<?php echo base_url(); ?>index.php/Quizz/person?question=" + this.get("question");
 						return link;
 					},
 					defaults: {
