@@ -1,51 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Simple Quiz App with Backbone.js</title>
-<style>
-		body {
-		font-family: Arial, sans-serif;
-		background-color: #f0f0f0;
-		margin: 0;
-		padding: 0;
-		}
+	<meta charset="utf-8">
+	<title>Play Geography Quiz</title>
 
-		#container {
-			width: 50%;
-			margin: 100px auto;
-			background-color: #fff;
-			padding: 20px;
-			border-radius: 10px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		}
-
-		h1 {
-			text-align: center;
-			color: #333;
-		}
-
-		form {
-			text-align: center;
-		}
-
-		input[type="submit"] {
-			padding: 10px 20px;
-			background-color: #007bff;
-			color: #fff;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			transition: background-color 0.3s ease;
-		}
-
-		input[type="submit"]:hover {
-			background-color: #0056b3;
-		}
-
-	</style>
     <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        }
+
+        #container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+        input[type="radio"] {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+        <style>
             body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -140,54 +147,10 @@
                 margin-bottom: 10px;
             }
         </style>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .quiz-container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            margin-top: 0;
-            color: #333;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        label {
-            margin-left: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .new-question-input {
-            margin-bottom: 10px;
-        }
-    </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.0/backbone-min.js"></script>
+
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">
         <a href="#">QUIZ BOX</a>
@@ -198,17 +161,34 @@
         <li><a href="<?php echo base_url('index.php/LoginController/LogoutUser'); ?>">Logout</a></li>
         </ul>
     </nav>
+
     <div id="container">
-	<h1>Welcome to Quiz!</h1>
+        <h1>Play the Quiz!</h1>
+        
+        <form method="post" action="<?php echo base_url();?>index.php/Questions/resultdisplay">
+        
+        
+        <?php foreach($questions as $row) { ?>
+        
+        <?php $ans_array = array($row->option1, $row->option2, $row->option3,$row->option4);
+        shuffle($ans_array); ?>
+        
+        <p><?=$row->quizID?>.<?=$row->question?></p>
+        
+        <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[0]?>" required> <?=$ans_array[0]?><br>
+        <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[1]?>"> <?=$ans_array[1]?><br>
+        <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[2]?>"> <?=$ans_array[2]?><br>
+        <input type="radio" name="quizid<?=$row->quizID?>" value="<?=$ans_array[3]?>"> <?=$ans_array[3]?><br>
 
-
-    <form method="" action="<?php echo base_url();?>index.php/Questions/quizdisplay">
-
-        <input type="submit" value="Start">
-    
-    </form> 
-
-    
+        
+        <?php } ?>
+        
+        <br><br>
+        <input type="submit" value="Submit!">
+        
+        </form>
+        
+    </div>
 
 </body>
 </html>
