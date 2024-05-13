@@ -40,17 +40,21 @@ class Questions extends CI_Controller {
 	
 	public function resultdisplay()
 	{
+		// Load the quiz model and get questions
+		$this->load->model('quizmodel');
+		$this->data['questions'] = $this->quizmodel->getQuestions();
+		print($questions);
 		$this->data['checks'] = array(
-		     'ques1' => $this->input->post('quizid34'),
-		     'ques2' => $this->input->post('quizid35'),
-			 'ques3' => $this->input->post('quizid36'),
-			 'ques4' => $this->input->post('quizid37'),
-		     'ques5' => $this->input->post('quizid38'),
-			 'ques6' => $this->input->post('quizid39'),
-			 'ques7' => $this->input->post('quizid41'),
-			 'ques8' => $this->input->post('quizid42'),
-		     'ques9' => $this->input->post('quizid43'),
-			 'ques10' => $this->input->post('quizid57'),
+		     'ques1' => $this->input->post('quizid60'),
+		     'ques2' => $this->input->post('quizid61'),
+			 'ques3' => $this->input->post('quizid62'),
+			 'ques4' => $this->input->post('quizid63'),
+		     'ques5' => $this->input->post('quizid64'),
+			 'ques6' => $this->input->post('quizid65'),
+			 'ques7' => $this->input->post('quizid66'),
+			 'ques8' => $this->input->post('quizid67'),
+		     'ques9' => $this->input->post('quizid68'),
+			 'ques10' => $this->input->post('quizid69'),
 		);
 
         $this->load->model('quizmodel');
