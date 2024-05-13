@@ -5,11 +5,14 @@
 	<title>Create Comment</title>
 
     <style>
+       /* General Styles */
         body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
+        /* Container Styles */
         #container {
             width: 80%;
             margin: 0 auto;
@@ -19,22 +22,27 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        /* Heading Styles */
         h1 {
             text-align: center;
         }
 
+        /* Form Styles */
         form {
             margin-top: 20px;
         }
 
+        /* Paragraph Styles */
         p {
             font-weight: bold;
         }
 
+        /* Radio Button Styles */
         input[type="radio"] {
             margin-bottom: 10px;
         }
 
+        /* Submit Button Styles */
         input[type="submit"] {
             display: block;
             margin: 0 auto;
@@ -51,65 +59,57 @@
             background-color: #45a049;
         }
 
-    </style>
-    <style>
-        body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        }
-
+        /* Navbar Styles */
         .navbar {
-        background-color: #333;
-        color: #fff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
         }
 
         .navbar a {
-        text-decoration: none;
-        color: #fff;
+            text-decoration: none;
+            color: #fff;
         }
 
         .logo a {
-        font-size: 1.5rem;
-        font-weight: bold;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
         .nav-links {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
         }
 
         .nav-links li {
-        margin-left: 20px;
+            margin-left: 20px;
         }
 
         .nav-links li:first-child {
-        margin-left: 0;
+            margin-left: 0;
         }
 
+        /* Welcome Message Styles */
         .welcome-message {
-        text-align: center;
-        padding: 50px 20px;
+            text-align: center;
+            padding: 50px 20px;
         }
 
         .welcome-message h1 {
-        font-size: 2rem;
-        margin-bottom: 10px;
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
 
         .welcome-message p {
-        font-size: 1.2rem;
+            font-size: 1.2rem;
         }
-        body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        }
+
+        /* Quiz Container Styles */
         .quiz-container {
             max-width: 600px;
             margin: 50px auto;
@@ -118,20 +118,29 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Heading Styles */
         h2 {
             margin-top: 0;
             color: #333;
         }
+
+        /* List Styles */
         ul {
             list-style: none;
             padding: 0;
         }
+
         li {
             margin-bottom: 10px;
         }
+
+        /* Label Styles */
         label {
             margin-left: 5px;
         }
+
+        /* Button Styles */
         button {
             padding: 10px 20px;
             background-color: #007bff;
@@ -140,12 +149,16 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
+        /* New Question Input Styles */
         .new-question-input {
             margin-bottom: 10px;
         }
+
     </style>
 
 </head>

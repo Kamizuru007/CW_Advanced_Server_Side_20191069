@@ -1,81 +1,92 @@
 <?php include 'common/header.php'?>
-<style>
+  <style>
+    /* General Styles */
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
     }
 
+    /* Container Styles */
     .container {
-      max-width: 400px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
+    /* Box Styles */
     .box {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
 
+    /* Form Box Styles */
     .form-box {
-      padding: 20px;
+        padding: 20px;
     }
 
+    /* Form Header Styles */
     .form-box header {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
+    /* Field Styles */
     .field {
-      margin-top: 20px;
-      margin-bottom: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
+    /* Field Label Styles */
     .field label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
     }
 
+    /* Input Styles */
     .field input[type="text"],
     .field input[type="password"] {
-      width: 93%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+        width: 93%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
     }
 
+    /* Submit Button Styles */
     .field input[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+        width: 100%;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
 
     .field input[type="submit"]:hover {
-      background-color: #ffcc00;
+        background-color: #ffcc00;
     }
 
+    /* Links Styles */
     .links {
-      text-align: center;
+        text-align: center;
     }
 
     .links a {
-      color: #333;
-      text-decoration: none;
+        color: #333;
+        text-decoration: none;
     }
 
     .links a:hover {
-      text-decoration: underline;
+        text-decoration: underline;
     }
+
   </style>
 
 <body>

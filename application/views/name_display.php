@@ -9,13 +9,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
 
 	<style>
+		/* General Styles */
 		body {
-		font-family: Arial, sans-serif;
-		margin: 0;
-		padding: 0;
-		background-color: #f4f4f4;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f4f4f4;
 		}
 
+		/* Container Styles */
 		.container {
 			width: 80%;
 			margin: 0 auto;
@@ -25,19 +27,23 @@
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
 
+		/* Heading Styles */
 		h1, h3 {
 			color: #333;
 		}
 
+		/* Form Styles */
 		form {
 			margin-bottom: 20px;
 		}
 
+		/* Label Styles */
 		label {
 			display: block;
 			margin-bottom: 5px;
 		}
 
+		/* Text Input Styles */
 		input[type="text"] {
 			width: 100%;
 			padding: 10px;
@@ -46,6 +52,7 @@
 			border-radius: 5px;
 		}
 
+		/* Submit Button Styles */
 		input[type="submit"] {
 			background-color: #007bff;
 			color: #fff;
@@ -59,6 +66,7 @@
 			background-color: #0056b3;
 		}
 
+		/* Table Styles */
 		table {
 			width: 100%;
 			border-collapse: collapse;
@@ -71,7 +79,8 @@
 			text-align: left;
 		}
 
-		#message {
+		/* Message Styles */
+		#message, #createmsg {
 			background-color: #4CAF50;
 			color: white;
 			padding: 10px;
@@ -79,27 +88,6 @@
 			text-align: center;
 			display: none;
 		}
-
-		#editBox {
-			margin-top: 20px;
-		}
-
-		#createmsg {
-			background-color: #4CAF50;
-			color: white;
-			padding: 10px;
-			margin-top: 20px;
-			text-align: center;
-			display: none;
-		}
-
-	</style>
-	<style>
-		body {
-		margin: 0;
-		font-family: Arial, sans-serif;
-		}
-
 		.navbar {
 		background-color: #333;
 		color: #fff;
@@ -133,61 +121,6 @@
 		.nav-links li:first-child {
 		margin-left: 0;
 		}
-
-		.welcome-message {
-		text-align: center;
-		padding: 50px 20px;
-		}
-
-		.welcome-message h1 {
-		font-size: 2rem;
-		margin-bottom: 10px;
-		}
-
-		.welcome-message p {
-		font-size: 1.2rem;
-		}
-        body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        }
-        .quiz-container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            margin-top: 0;
-            color: #333;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        label {
-            margin-left: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .new-question-input {
-            margin-bottom: 10px;
-        }
 	</style>
 
 </head>
